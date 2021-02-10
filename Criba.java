@@ -1,33 +1,35 @@
 import java.util.Scanner;
-
+/*
+@author AlejandroSanchez.
+*/
 public class Criba {
 
 	public static int[] generarPrimos(int max) {
 		
 		if (max >= 2) {
 			
-			int tama�oArray = max + 1; 
-			boolean[] esPrimo = new boolean[tama�oArray];
+			int tamañoArray = max + 1; 
+			boolean[] esPrimo = new boolean[tamañoArray];
 
-			for (int i = 0; i < tama�oArray; i++) {
+			for (int i = 0; i < tamañoArray; i++) {
 				esPrimo[i] = true;
 			    esPrimo[0] = esPrimo[1] = false;
 			}
 			
-			for (int i = 2; i < Math.sqrt(tama�oArray) + 1; i++) {
+			for (int i = 2; i < Math.sqrt(tamañoArray) + 1; i++) {
 				if (esPrimo[i]) {
-					for (int j = 2 * i; j < tama�oArray; j += i)
+					for (int j = 2 * i; j < tamañoArray; j += i)
 						esPrimo[j] = false;
 				}
 			}
 			int cuentaPrimos = 0;
 			
-			for (int i = 0; i < tama�oArray; i++) {
+			for (int i = 0; i < tamañoArray; i++) {
 				if (esPrimo[i])
 					cuentaPrimos++;
 			}
 			int[] primos = new int[cuentaPrimos];
-			    for (int i = 0, j = 0; i < tama�oArray; i++) {
+			    for (int i = 0, j = 0; i < tamañoArray; i++) {
 				    if (esPrimo[i])
 					   primos[j++] = i;
 			}
@@ -40,7 +42,7 @@ public class Criba {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
-		System.out.println("Introduce el número para la criba de Erastótenes: ");
+		System.out.println("Introduce el nÃºmero para la criba de ErastÃ³tenes: ");
 
 		int dato = teclado.nextInt();
 		teclado.close();
