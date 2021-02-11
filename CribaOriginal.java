@@ -1,5 +1,6 @@
 
-
+/*@author ALEX
+*/
 import java.util.Scanner;
 
 public class CribaOriginal {
@@ -8,7 +9,7 @@ public class CribaOriginal {
 		int i, j;
 		if (max >= 2) {
 			// Declaraciones
-			int dim = max + 1; // Tamaño del array
+			int dim = max + 1; // TamaÃ±o del array
 			boolean[] esPrimo = new boolean[dim];
 			// Inicializar el array
 			for (i = 0; i < dim; i++)
@@ -23,7 +24,7 @@ public class CribaOriginal {
 						esPrimo[j] = false;
 				}
 			}
-			// ¿Cuantos primos hay?
+			// Â¿Cuantos primos hay?
 			int cuenta = 0;
 			for (i = 0; i < dim; i++) {
 				if (esPrimo[i])
